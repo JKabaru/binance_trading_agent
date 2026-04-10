@@ -1,0 +1,64 @@
+# Binance Auto-Research Requirements
+
+## Core Dependencies
+
+```
+ccxt>=4.0.0          # Exchange API (Binance)
+pandas>=2.0.0        # Data manipulation
+numpy>=1.24.0        # Numerical computing
+streamlit>=1.28.0    # Dashboard
+plotly>=5.17.0       # Interactive charts
+```
+
+## Optional Dependencies
+
+```
+ta-lib               # Technical analysis indicators (if available)
+scikit-learn         # ML features for advanced strategies
+joblib               # Parallel processing
+```
+
+## Installation
+
+### Using pip
+
+```bash
+pip install ccxt pandas numpy streamlit plotly
+```
+
+### Using requirements.txt
+
+```bash
+pip install -r requirements.txt
+```
+
+### Using conda
+
+```bash
+conda create -n binance-research python=3.10
+conda activate binance-research
+conda install pandas numpy
+pip install ccxt streamlit plotly
+```
+
+## System Requirements
+
+- Python 3.10 or higher
+- 4GB+ RAM recommended
+- Internet connection for data downloads
+- GPU not required (CPU-only backtesting)
+
+## Quick Test
+
+After installation, verify everything works:
+
+```bash
+# Test data download
+python binance_data.py --symbol BTC/USDT --timeframe 1h --days 7
+
+# Test single experiment
+python run_experiment.py --strategy rsi --symbol BTC/USDT
+
+# Test dashboard (should show empty state)
+streamlit run dashboard/app.py
+```
